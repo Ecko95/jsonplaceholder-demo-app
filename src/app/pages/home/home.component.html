@@ -1,0 +1,142 @@
+<div class="showcase">
+	<div class="overlay">
+		<div class="container">
+			<div class="row">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="card-body">
+				<h4 class="card-title">
+					Users
+					<!-- <app-user></app-user> -->
+				</h4>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card-body">
+				<h4 class="card-title">Albums</h4>
+				<!-- <app-album></app-album> -->
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="card-body">
+				<h4 class="card-title">
+					Photos
+				</h4>
+				<!-- <app-photo></app-photo> -->
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div id="stepper1" class="bs-stepper">
+		<div class="bs-stepper-header">
+			<div class="step" data-target="#test-l-1">
+				<button class="step-trigger">
+          <span class="bs-stepper-circle">1</span>
+          <span class="bs-stepper-label">Email</span>
+        </button>
+			</div>
+			<div class="line"></div>
+			<div class="step" data-target="#test-l-2">
+				<button class="step-trigger">
+          <span class="bs-stepper-circle">2</span>
+          <span class="bs-stepper-label">Password</span>
+        </button>
+			</div>
+			<div class="line"></div>
+			<div class="step" data-target="#test-l-3">
+				<button class="step-trigger">
+          <span class="bs-stepper-circle">3</span>
+          <span class="bs-stepper-label">Validate</span>
+        </button>
+			</div>
+		</div>
+		<div class="bs-stepper-content">
+			<form (ngSubmit)="onSubmit()">
+				<div id="test-l-1" class="content">
+					<div class="form-group">
+						<label for="exampleInputEmail1">Email address</label>
+						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" />
+          </div>
+						<button (click)="next()" class="btn btn-primary">Next</button>
+					</div>
+					<div id="test-l-2" class="content">
+						<div class="form-group">
+							<label for="exampleInputPassword1">Password</label>
+							<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" />
+          </div>
+							<button (click)="next()" class="btn btn-primary">Next</button>
+						</div>
+						<div id="test-l-3" class="content text-center">
+							<button type="submit" class="btn btn-primary mt-5">Submit</button>
+						</div>
+			</form>
+		</div>
+	</div>
+
+
+</div>
+
+<mat-horizontal-stepper [linear]="isLinear" #stepper>
+	<!-- keep icons as numbers during edit-->
+	<!--
+  <ng-template matStepperIcon="edit" let-index="index">
+		{{index +1}}
+	</ng-template>
+  -->
+
+	<!-- change default 'edit' icon -->
+	<ng-template matStepperIcon="edit">
+		<mat-icon>bubble_chart</mat-icon>
+	</ng-template>
+
+	<!-- change default 'done' icon -->
+	<!--
+  <ng-template matStepperIcon="done">
+		<mat-icon>done_all</mat-icon>
+	</ng-template>
+  -->
+
+	<!-- changed step icons -->
+	<ng-template matStepperIcon="home">
+		<mat-icon>home</mat-icon>
+	</ng-template>
+	<ng-template matStepperIcon="form">
+		<mat-icon>format_align_center</mat-icon>
+	</ng-template>
+	<ng-template matStepperIcon="last">
+		<mat-icon>done_all</mat-icon>
+	</ng-template>
+
+	<mat-step label="First Step" state="home">
+		<div>
+			<button mat-button matStepperNext>Continue</button>
+		</div>
+	</mat-step>
+
+	<mat-step label="Fill out your address" state="form">
+		<form [formGroup]="formGroup">
+			<mat-form-field>
+				<input matInput placeholder="Address" formControlName="secondCtrl" required>
+      </mat-form-field>
+				<div>
+					<button mat-button matStepperPrevious>Back</button>
+					<button mat-button matStepperNext>Next</button>
+				</div>
+		</form>
+	</mat-step>
+
+	<mat-step label="Done" state="last">
+		You are now done.
+		<div>
+			<button mat-button matStepperPrevious>Back</button>
+			<button mat-button (click)="stepper.reset()">Reset</button>
+		</div>
+	</mat-step>
+
+</mat-horizontal-stepper>
