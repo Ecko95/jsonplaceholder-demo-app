@@ -25,6 +25,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatCardModule } from "@angular/material/card";
 import { MatListModule } from "@angular/material/list";
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import {
   MatButtonModule,
   MatFormFieldModule,
@@ -54,7 +55,8 @@ import { ApiService } from "./services/api.service";
     MatCheckboxModule,
     MatCardModule,
     MatListModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatAutocompleteModule
   ],
   declarations: [
     AppComponent,

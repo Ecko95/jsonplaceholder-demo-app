@@ -1,7 +1,7 @@
 <p>
 	photo works!
 </p>
-<div *ngFor="let photo of photos">
+<div *ngFor="let photo of photosToLoad | async">
 	<h5>{{photo.albumId}}</h5>
 	<img [src]="photo.url" [alt]="photo.title">
 </div>

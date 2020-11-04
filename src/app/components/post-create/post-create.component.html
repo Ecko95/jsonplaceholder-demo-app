@@ -11,8 +11,8 @@
 			<button class="btn btn-block btn-primary" (click)="addPost({userId: '', title: titlePost.value, body: bodyPost.value}); titlePost.value=''; bodyPost.value=''">Post </button>
 		</div>
 
-    <mat-list role="list" *ngFor="let post of savedPosts">
-    <mat-list-item role="listitem">{{post.title}} - {{post.body}}</mat-list-item>
-  </mat-list>
+		<mat-list role="list" *ngFor="let post of savedPosts">
+			<mat-list-item role="listitem">{{post.title}} - {{post.body}}</mat-list-item>
+		</mat-list>
 
 	</div>

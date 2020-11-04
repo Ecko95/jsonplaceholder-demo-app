@@ -38,25 +38,24 @@
 	</ng-template>
 
 	<mat-step label="Users" state="home">
+		<app-user></app-user>
 		<div>
 			<button mat-button matStepperNext>Continue</button>
 		</div>
 	</mat-step>
 
 	<mat-step label="Posts" state="form">
+		<app-post-create></app-post-create>
 		<form [formGroup]="formGroup">
-			<mat-form-field>
-				<input matInput placeholder="Name" formControlName="secondCtrl" required>
-      </mat-form-field>
-				<div>
-					<button mat-button matStepperPrevious>Back</button>
-					<button mat-button matStepperNext>Next</button>
-				</div>
+			<div>
+				<button mat-button matStepperPrevious>Back</button>
+				<button mat-button matStepperNext>Next</button>
+			</div>
 		</form>
 	</mat-step>
 
-	<mat-step label="Done" state="last">
-		You are now done.
+	<mat-step label="Photos" state="last">
+		<app-photo></app-photo>
 		<div>
 			<button mat-button matStepperPrevious>Back</button>
 			<button mat-button (click)="stepper.reset()">Reset</button>

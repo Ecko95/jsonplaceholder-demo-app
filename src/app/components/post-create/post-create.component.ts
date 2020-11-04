@@ -22,7 +22,6 @@ export class PostCreateComponent implements OnInit {
     post.title = post.title.trim();
     post.body = post.body.trim();
     this.postsService.addPost(post).subscribe(response => {
-      console.log(response);
       this.newPost.next(post);
       localStorage.setItem("newPost", JSON.stringify(this.savedPosts));
     });
@@ -38,14 +37,11 @@ export class PostCreateComponent implements OnInit {
       this.savedPosts = [];
     }
   }
-
   ngOnInit() {
     this.loadSavedPosts();
     this.newPost$.subscribe(response => {
       this.savedPosts.push(response);
       localStorage.setItem("savedPosts", JSON.stringify(this.savedPosts));
-      console.log("response> ", response);
-      console.log("array> ", this.savedPosts);
     });
   }
 }
