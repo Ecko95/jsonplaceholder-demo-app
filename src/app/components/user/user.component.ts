@@ -19,8 +19,6 @@ export class UserComponent implements OnInit {
   apiNameList: UserModel[];
   filteredUsers: UserModel[];
   subscription: Subscription;
-  myControl = new FormControl();
-  options: string[] = ["One", "Two", "Three"];
   filteredOptions: Observable<string[]>;
   constructor(private usersService: UsersService) {}
 
@@ -29,7 +27,6 @@ export class UserComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.getUsers();
     this.serveUsers();
     this.usersService.getUsers().subscribe((users: any[]) => {
       this.users = users.filter(
@@ -46,10 +43,7 @@ export class UserComponent implements OnInit {
   }
 
   getFilteredUsers() {
-    this.filteredUsers = this.apiNameList.filter(
-      user =>
-        user.name.toLowerCase().indexOf(this.filterString.toLowerCase()) > 0
-    );
+    // this.filteredUsers = this.apiNameList.filter();
   }
 
   ngOnDestroy() {
