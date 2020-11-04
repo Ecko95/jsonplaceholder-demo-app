@@ -3,14 +3,14 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 .showcase {
   width: 100%;
-  height: 500px;
+  height: 200px;
   background: url(https://picsum.photos/seed/picsum/1000/1000);
   background-size: cover;
   background-position: center;
 }
 .overlay {
   width: 100%;
-  height: 500px;
+  height: 200px;
 }
 .container-fluid {
   background-color: rgba(0, 119, 255, 0.5);
