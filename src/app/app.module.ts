@@ -22,6 +22,9 @@ import { CommentComponent } from "./components/comment/comment.component";
 import { PostCreateComponent } from "./components/post-create/post-create.component";
 import { MatStepperModule } from "@angular/material/stepper";
 import { MatIconModule } from "@angular/material/icon";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatCardModule } from "@angular/material/card";
+import { MatListModule } from "@angular/material/list";
 import {
   MatButtonModule,
   MatFormFieldModule,
@@ -31,11 +34,11 @@ import {
   MatToolbarModule
 } from "@angular/material";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ApiService } from "./services/api.service";
 
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,
     HttpClientModule,
     AppRoutingModule,
     MatStepperModule,
@@ -48,6 +51,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     MatRadioModule,
     MatSelectModule,
     MatToolbarModule,
+    MatCheckboxModule,
+    MatCardModule,
+    MatListModule,
     BrowserAnimationsModule
   ],
   declarations: [
@@ -70,7 +76,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
     UsersService,
     AlbumsService,
     CommentsService,
-    PhotosService
+    PhotosService,
+    ApiService
   ]
 })
 export class AppModule {}
