@@ -48,7 +48,7 @@ export class UserComponent implements OnInit {
   getFilteredUsers() {
     this.filteredUsers = this.apiNameList.filter(
       user =>
-        user.name.toLowerCase().indexOf(this.filterString.toLowerCase()) > -1
+        user.name.toLowerCase().indexOf(this.filterString.toLowerCase()) > -1 //0 for surname -1 for firstname
     );
   }
 
