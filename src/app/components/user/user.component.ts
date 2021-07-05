@@ -1,26 +1,26 @@
-import { Component, OnInit } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { Observable, Subscription } from "rxjs";
+import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Observable, Subscription } from 'rxjs';
 
 // Model
-import { UserModel } from "../../models/user.model";
+import { UserModel } from '../../models/user.model';
 
 // Service
-import { UsersService } from "../../services/users.service";
+import { UsersService } from '../../services/users.service';
 
 @Component({
-  selector: "app-user",
-  templateUrl: "./user.component.html",
-  styleUrls: ["./user.component.css"]
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
   users: UserModel[];
-  filterString = "";
+  filterString = '';
   apiNameList: UserModel[];
   filteredUsers: UserModel[];
   subscription: Subscription;
   myControl = new FormControl();
-  options: string[] = ["One", "Two", "Three"];
+  options: string[] = ['One', 'Two', 'Three'];
   filteredOptions: Observable<string[]>;
   constructor(private usersService: UsersService) {}
 
@@ -33,9 +33,9 @@ export class UserComponent implements OnInit {
     this.serveUsers();
     this.usersService.getUsers().subscribe((users: any[]) => {
       this.users = users.filter(
-        user => user.status && user.name === "Leanne Graham"
+        user => user.status && user.name === 'Leanne Graham'
       );
-      console.log("Got the users as: ", this.users);
+      console.log('Got the users as: ', this.users);
     });
   }
 
@@ -49,7 +49,7 @@ export class UserComponent implements OnInit {
     this.filteredUsers = this.apiNameList.filter(
       user =>
         user.name.toLowerCase().indexOf(this.filterString.toLowerCase()) > -1 //0 for surname -1 for firstname
-    );
+        );
   }
 
   ngOnDestroy() {

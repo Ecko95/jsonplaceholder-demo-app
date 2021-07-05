@@ -6,7 +6,7 @@
 </div> -->
 
 <div class="wrapper">
-	<span id="search-box">
+  <span id="search-box">
     <input matInput
       (keyup)="getFilteredUsers()" 
       class="col-lg-7" 
@@ -17,14 +17,14 @@
       placeholder="Search by name">
   </span>
 
-	<span id="people">{{filteredUsers?.length}} People</span>
+  <span id="people">{{filteredUsers?.length}} People</span>
 
-	<div class="accordion" id="accordionExample">
-		<div class="card" *ngFor="let user of filteredUsers">
-			<div class="card-header" id="headingOne">
-				<h5 class="mb-0">
-					<button
-            class="btn btn-link"
+  <div class="accordion" id="accordionExample">
+    <div class="card" *ngFor="let user of filteredUsers">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button
+            class="btn btn-default"
             type="button"
             data-toggle="collapse"
             [attr.data-target]="'#' + user.name.slice(0, 2) + user.name.length"
@@ -32,18 +32,19 @@
             aria-controls="collapseOne">
             {{user.name}}
           </button>
-				</h5>
-			</div>
-			<div [id]="user.name.slice(0, 2) + user.name.length" class="collapse" aria-labelledby="headingOne"
-				data-parent="#accordionExample">
-				<div class="card-body">
-					<img src="./assets/user.jpg" id= "user-pic">
+          <span> {{user.email}}</span>
+        </h5>
+      </div>
+      <div [id]="user.name.slice(0, 2) + user.name.length" class="collapse" aria-labelledby="headingOne"
+        data-parent="#accordionExample">
+        <div class="card-body">
+          <img src="./assets/user.jpg" id= "user-pic">
           {{user.email}}
           {{user.address}}
         </div>
-				</div><!-- end  of .card-body-->
-			</div><!-- end of .card -->
-		</div>
-		<!--end of .accordion-->
-	</div>
-	<!--end of .wrapper -->
+      </div><!-- end  of .card-body-->
+    </div><!-- end of .card -->
+  </div>
+  <!--end of .accordion-->
+</div>
+<!--end of .wrapper -->
