@@ -6,8 +6,13 @@
 	<h1>{{photo.title}}</h1>
 	<img [src]="photo.url" [alt]="photo.title">
 </div> -->
-<div *ngFor="let photo of photosToLoad | async">
-	<h5>{{photo.id}}</h5>
-	<h1>{{photo.title}}</h1>
-	<img [src]="photo.url" [alt]="photo.title">
-</div>
+
+
+<mat-grid-list cols="3" rowHeight="2:1">
+
+	<mat-grid-tile *ngFor="let photo of photosToLoad | async">
+
+		<img [src]="photo.thumbnailUrl" [alt]="photo.title">
+	</mat-grid-tile>
+
+</mat-grid-list>
