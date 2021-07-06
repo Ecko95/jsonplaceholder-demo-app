@@ -1,11 +1,11 @@
 /* Add application styles & imports to this file! */
-@import url("https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans|Oswald|Raleway|Roboto");
-@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans|Oswald|Raleway|Roboto');
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 /* Boostrap */
-@import "~bootstrap/dist/css/bootstrap.min.css";
+@import '~bootstrap/dist/css/bootstrap.min.css';
 
 * {
-  font-family: "Raleway", "Oswald", "Lato", "Roboto", "Open Sans", "Montserrat",
+  font-family: 'Raleway', 'Oswald', 'Lato', 'Roboto', 'Open Sans', 'Montserrat',
     sans-serif;
 }
 
